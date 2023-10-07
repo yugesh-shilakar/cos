@@ -1,0 +1,64 @@
+body {
+    background: var(--color-bg);
+}
+
+.heading {
+    margin-left: 16px;
+    margin-top: 16px;
+    color: #662A67;
+}
+
+.notifications {
+    padding: 1em;
+}
+
+.noti {
+    background: var(--color-white);
+    padding: 1.5em;
+    border-radius: 10px;
+    position: relative;
+}
+
+.noti-info {
+    display: flex;
+    align-items: center;
+}
+
+.smiley {
+    background-color: var(--color-secondary);
+    padding: 0.6em;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    margin-right: 12px;
+}
+
+.smiley img {
+    height: 22px;
+    width: 22px;
+}
+
+.noti-text {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.noti-time {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+    transform: translate(-10px, -10px);
+
+    font-size: 10px;
+    font-weight: 500;
+    color: var(--color-gray);
+}
+
+.noti-no {
+    height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary-light);
+}

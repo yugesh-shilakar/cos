@@ -1,0 +1,153 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300;400;500;600;700;800;900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Red Hat Display ;
+    padding-bottom: 80px;
+  } */
+
+.main {
+  background: #ffebff;
+}
+
+.heading {
+  padding-left: 16px;
+  padding-top: 16px;
+  color: #662a67;
+}
+.orders,
+.payment {
+  padding: 1em;
+}
+
+.order {
+  background: #fff;
+  padding: 1.2em;
+  border-radius: 10px;
+  position: relative;
+  margin: 16px;
+}
+
+.order-info,
+.order-info > div,
+.payment-methods,
+.payment-info,
+.payment-total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.order-img {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  /* border: 1px solid rgb(214, 130, 186); */
+  box-shadow: #6d1c55af -20px 20px 50px 0px;
+  margin-right: 12px;
+  background: #fff;
+}
+
+.order-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 6px;
+}
+
+.order-cost {
+  font-size: 16px;
+  font-weight: 500;
+  color: #a39c99;
+}
+
+.order-desc,
+.order-counter {
+  display: flex;
+  flex-direction: column;
+}
+
+.order-count {
+  margin: 8px 0;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.bg-icon {
+  border-radius: 6px;
+  padding: 6px;
+  font-size: 10px;
+}
+
+.bg-icon-plus {
+  color: #fff;
+  background-color: #662a67;
+}
+
+.bg-icon-minus {
+  color: #000;
+  background-color: #ffe8e0;
+}
+
+.order-no {
+  height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #946a95;
+}
+
+.payment {
+  background: #fff;
+}
+
+.payment-methods,
+.payment-details,
+.sub-heading {
+  padding: 1.2em;
+}
+
+.sub-heading,
+.payment-details {
+  color: #662a67;
+}
+.payment-details {
+  margin-bottom: 50px;
+}
+
+.payment-before {
+  font-size: 16px;
+  color: #a39c99;
+  font-weight: 500;
+}
+
+.payment-info {
+  border-bottom: 2px dashed #a39c99;
+  padding: 1.5em 0 0.5em 0;
+}
+
+.payment-total {
+  padding: 1em 0;
+  font-weight: 500;
+}
+
+.btn {
+  background: #662a67;
+  text-align: center;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 1.2em;
+  border-radius: 10px;
+  margin-top: 16px;
+}
