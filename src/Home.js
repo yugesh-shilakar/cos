@@ -1,54 +1,23 @@
 import Nav from "./Nav";
-const mainMenuItems = [
-  {
-    id: 3,
-    url: "fried-chicken.svg",
-    title: "Fried Chicken",
-    time: "23",
-    ratings: "4.6",
-    price: "141",
-  },
-  {
-    id: 4,
-    url: "lemon.svg",
-    title: "Lemon",
-    time: "20",
-    ratings: "4.5",
-    price: "227",
-  },
-  {
-    id: 5,
-    url: "popcorn.svg",
-    title: "Popcorn",
-    time: "19",
-    ratings: "4.9",
-    price: "284",
-  },
-  {
-    id: 6,
-    url: "vanilla-cupcake.svg",
-    title: "Vanilla Cupcake",
-    time: "29",
-    ratings: "4.1",
-    price: "168",
-  },
-  {
-    id: 7,
-    url: "bread-egg.svg",
-    title: "Bread Egg",
-    time: "10",
-    ratings: "4.8",
-    price: "238",
-  },
-  {
-    id: 8,
-    url: "cookie.svg",
-    title: "Cookie",
-    time: "21",
-    ratings: "4.7",
-    price: "181",
-  },
-];
+import { useState, useEffect } from "react";
+// const mainMenuItems = [
+//   {
+//     id: 3,
+//     url: "fried-chicken.svg",
+//     title: "Fried Chicken",
+//     time: "23",
+//     ratings: "4.6",
+//     price: "141",
+//   },
+//   {
+//     id: 8,
+//     url: "cookie.svg",
+//     title: "Cookie",
+//     time: "21",
+//     ratings: "4.7",
+//     price: "181",
+//   },
+// ];
 const specialItems = [
   {
     id: 9,
@@ -91,13 +60,37 @@ function Head() {
   );
 }
 function MainMenu({ cartItems, setCartItems }) {
+  // const [mainMenuItems,setMainMenuItems] = useState([])
+  const [mainMenuItems, setMainMenuItems] = useState([]);
+
+  useEffect(() => {
+    async function fetchItems() {
+      try {
+        const response = await fetch("http://localhost:1234/items");
+        if (response.ok) {
+          const data = await response.json();
+          console.log(data.data.items);
+          setMainMenuItems(data.data.items);
+        } else {
+          console.error("Failed to fetch items:", response.statusText);
+          // Handle failure to fetch items
+        }
+      } catch (error) {
+        console.error("Failed to fetch items:", error);
+        // Handle failure to fetch items
+      }
+    }
+
+    fetchItems();
+  }, []);
+
   return (
     <main>
       <h2>Aja ko Menu</h2>
       <div className="menu-items">
         {mainMenuItems.map((item) => (
           <MenuItem
-            key={item.id}
+            key={item._id}
             item={item}
             cartItems={cartItems}
             setCartItems={setCartItems}
@@ -126,9 +119,11 @@ function Specials({ cartItems, setCartItems }) {
   );
 }
 function MenuItem({ item, cartItems, setCartItems }) {
-  const { id, url, title, time, ratings, price } = item;
+  const { _id, url, title, time, ratings, price } = item;
+  const id = _id;
   function handleAdd(e) {
     e.preventDefault();
+    console.log("Logging menuitem", id, item);
     setCartItems([...cartItems, id]);
     console.log(cartItems);
   }
